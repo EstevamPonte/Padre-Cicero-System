@@ -1,10 +1,10 @@
 import React from 'react';
-import FormRegister from './components/formRegister'
+import Routes from './router/routes'
 
 function App() {
   return (
     <div className='container'>
-      <FormRegister/>
+      <Routes/>
     </div>
   );
 }
