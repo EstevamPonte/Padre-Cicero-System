@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { getOrder, updateStatus, addOnExcluded, showInfo } from '../../actions/PDSystemActions'
 import { Redirect, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { faTimesCircle, faArrowRight, faInfo } from '@fortawesome/free-solid-svg-icons'
 
 class List extends Component {
@@ -27,10 +28,11 @@ class List extends Component {
                     <div className='ballDiv' style={{backgroundColor: client.status}}></div>
                 </td>
                 <td>
-                    <button type="button" className="btn btn-info" onClick={() => this.props.showInfo(client)}>
-                        
-                        <FontAwesomeIcon icon={faInfo} size='lg' />
-                    </button>
+                    <Link to='/register'>
+                        <button type="button" className="btn btn-info" onClick={() => this.props.showInfo(client)}>
+                            <FontAwesomeIcon icon={faInfo} size='lg' />
+                        </button>
+                    </Link>
                     <button type="button" className="btn btn-success" onClick={() => this.props.updateStatus(client)}>
                         <FontAwesomeIcon icon={faArrowRight} size="lg" />
                     </button>
