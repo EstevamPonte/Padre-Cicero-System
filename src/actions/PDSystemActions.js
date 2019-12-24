@@ -3,8 +3,9 @@ import axios from 'axios'
 const URL = 'http://localhost:3004/'
 
 export const addOrder = (registerInfo) => {
+    const registerInfoWithStatus = {...registerInfo, status: 1}
     return dispatch => {
-        axios.post(URL + 'register', registerInfo)
+        axios.post(URL + 'register', registerInfoWithStatus)
     }
 }
 
