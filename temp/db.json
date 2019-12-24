@@ -4,8 +4,44 @@
       "name": "teste",
       "cpf": "teste",
       "description": "teste",
-      "status": 1,
+      "status": "yellow",
       "id": 1
+    },
+    {
+      "name": "teste2",
+      "cpf": "teste2",
+      "description": "teste2",
+      "status": "red",
+      "id": 2
+    },
+    {
+      "name": "teste3",
+      "cpf": "teste3",
+      "description": "teste3",
+      "status": "yellow",
+      "id": 3
+    },
+    {
+      "name": "teste4",
+      "cpf": "teste4",
+      "description": "TESTE4",
+      "status": "green",
+      "id": 4
+    },
+    {
+      "name": "Teste5",
+      "cpf": "teste5",
+      "description": "teste5",
+      "status": "blue",
+      "id": 5
+    },
+    {
+      "name": "teste6",
+      "cpf": "teste6",
+      "description": "teste6",
+      "status": "red",
+      "id": 6
     }
-  ]
+  ],
+  "excluded": []
 }

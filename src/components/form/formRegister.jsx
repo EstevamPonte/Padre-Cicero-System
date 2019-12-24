@@ -25,5 +25,5 @@ class FormRegister extends Component {
 }
 
 FormRegister = reduxForm({form: 'padreCiceroForm'})(FormRegister)
-const mapDispatchToProps = dispatch => bindActionCreators({addOrder}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({addOrder, destroyOnUnmount: false}, dispatch)
 export default connect(null, mapDispatchToProps)(FormRegister)

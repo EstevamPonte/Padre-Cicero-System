@@ -1,0 +1,14 @@
+
+.ballDiv{
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+} 
+
+button{
+    margin-left: 5px;
+}
+
+.table-actions {
+    width: 200px;
+}
