@@ -4,9 +4,11 @@ import './style/costumer.css'
 import Header from './components/layout/header'
 function App() {
   return (
-    <div className='container'>
-      <Header/>
-      <Routes/>
+    <div>
+        <Header/>
+      <div className='container'>
+        <Routes/>
+      </div>
     </div>
   );
 }

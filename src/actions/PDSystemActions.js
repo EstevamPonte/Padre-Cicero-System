@@ -3,7 +3,7 @@ import { initialize } from 'redux-form'
 const URL = 'http://localhost:3004/'
 
 export const addOrder = (registerInfo) => {
-    const registerInfoWithStatus = {...registerInfo, status: "red"}
+    const registerInfoWithStatus = {...registerInfo, status: "red", date: Date.now()}
     return dispatch => {
         axios.post(URL + 'register', registerInfoWithStatus)
     }
@@ -22,10 +22,11 @@ export const updateStatus = (client) => {
         client.status = 'yellow'
     }else if (client.status === 'yellow') {
         client.status = 'green'
-    }else{
+    }else if (client.status === 'green'){
         client.status = 'blue'
+    }else{
+        client.status = 'pago'
     }
-
     return dispatch => {
         axios.put(`${URL}register/${client.id}`, client)
             .then(resp => dispatch(getOrder()))
@@ -33,15 +34,17 @@ export const updateStatus = (client) => {
 }
 
 export const addOnExcluded = (client) => {
+    const id = client.id
+    delete client.id
     return dispatch => {
         axios.post(URL + 'excluded', client)
-            .then(resp => dispatch(removeOnRegister(client)))
+            .then(resp => dispatch(removeOnRegister(id)))
         }
     }
     
-const removeOnRegister = (client) => {
+const removeOnRegister = (id) => {
     return dispatch => {
-        axios.delete(`${URL}register/${client.id}`, client)
+        axios.delete(`${URL}register/${id}`)
             .then(resp => dispatch(getOrder()))
             
     }
